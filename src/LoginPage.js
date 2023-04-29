@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Dashboard from './Dashboard';
 
 const LoginPage = ({ handleLogin }) => {
   const [email, setEmail] = useState('admin@gmail.com');
   const [password, setPassword] = useState('admin');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [setLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
