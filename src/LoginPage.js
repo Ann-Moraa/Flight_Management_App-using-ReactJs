@@ -17,7 +17,6 @@ const LoginPage = ({ handleLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(email, password);
-    setLoggedIn(true);
     navigate('/dashboard');
   };
 

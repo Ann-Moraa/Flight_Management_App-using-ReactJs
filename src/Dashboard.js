@@ -5,13 +5,13 @@ import React, { useState, useEffect } from 'react';
 const Dashboard = ({ flights }) => {
   const [loggedIn, setLoggedIn] = useState(true);
 
-  const handleLogout = () => {
-    console.log('Logging out...');
-    localStorage.removeItem('authToken');
-    setLoggedIn(false);
-    window.location.href = '/login'; // navigate to the login page
-  };
-  
+const handleLogout = () => {
+  console.log('Logging out...');
+  localStorage.removeItem('authToken');
+  setLoggedIn(false);
+  window.location.href = '/'; // navigate to the login page
+};
+
 
   useEffect(() => {
     // Check if the user is logged in on mount

@@ -44,7 +44,7 @@ const App = () => {
             {loggedIn ? (
               <Route path="/dashboard/*" element={<Dashboard flights={flights} handleLogout={handleLogout} />} />
             ) : (
-              <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
+              <Route path="/" element={<LoginPage handleLogin={handleLogin} />} />
             )}
           </Routes>
         </header>
