@@ -1,5 +1,5 @@
 ## Flight_Management_App-using-ReactJs
-This is a simple ReactJs App with a Login and Component Dashboard that displays all the flights arriving and departing from all airports.
+This is a simple ReactJs App with a Login and Component Dashboard that displays all the flights arriving and departing from all airports. You can view the app: https://ann-moraa-flight-app-react.netlify.app 
 
 ## Available Scripts
 
