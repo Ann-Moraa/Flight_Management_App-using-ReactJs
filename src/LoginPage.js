@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Dashboard from './Dashboard';
 
 const LoginPage = ({ handleLogin }) => {
   const [email, setEmail] = useState('admin@gmail.com');
   const [password, setPassword] = useState('admin');
+  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,19 +18,23 @@ const LoginPage = ({ handleLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(email, password);
+    setLoggedIn(true);
+    navigate('/dashboard');
   };
+
+
 
   return (
     <div>
       <h2>Login Page</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Email:
+          Email:<br/>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <br />
         <label>
-          Password:
+          Password:<br/>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />

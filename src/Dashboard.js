@@ -1,33 +1,29 @@
-import { useNavigate } from 'react-router-dom';
+// Dashboard.js
+
 import React, { useState, useEffect } from 'react';
-import './Dashboard.css';
 
 const Dashboard = ({ flights }) => {
   const [loggedIn, setLoggedIn] = useState(true);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     console.log('Logging out...');
-    setLoggedIn(false);
     localStorage.removeItem('authToken');
+    setLoggedIn(false);
+    window.location.href = '/login'; // navigate to the login page
   };
-
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
+  
 
   useEffect(() => {
-    if (!loggedIn) {
-      console.log('Navigating to login page...');
-      navigate('/login', { replace: true });
+    // Check if the user is logged in on mount
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      setLoggedIn(false);
     }
-  }, [loggedIn, navigate]);
+  }, []);
 
   return (
     <div className="container">
-      <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleLoginClick}>Go to Login</button>
-
+      {!loggedIn && <button onClick={handleLogout}>Logout</button>}
       <h3>Flights Arriving</h3>
       <table className="table">
         <thead>
