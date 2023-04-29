@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const LoginPage = ({ handleLogin }) => {
   const [email, setEmail] = useState('admin@gmail.com');
   const [password, setPassword] = useState('admin');
-  const [setLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
